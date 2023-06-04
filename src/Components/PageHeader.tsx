@@ -76,7 +76,6 @@ const PageHeader = ({ isHidden }: { isHidden: boolean }) => {
         display: "flex",
         visibility: isHidden ? "hidden" : "visible",
         opacity: isHidden ? 0 : 1,
-        transition: "opacity 0.75s, visibility 0.75s",
         zIndex: 99999
       }}
     >
