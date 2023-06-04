@@ -43,7 +43,7 @@ const Cand = () => {
       sx={{
         position: "relative",
         overflow: "hidden",
-        display:'flex'
+        display:'flex',
       }}
     >
       <Box
@@ -74,14 +74,14 @@ const Cand = () => {
       >
         <Typography
           variant="h1"
-          sx={{ fontFamily: "'Kristi', cursive", transform: "scale(1.5)" }}
+          sx={{ fontFamily: "'Kristi', cursive", transform: {xs:"scale(1)", md: "scale(1.5)"} }}
         >
           Când?
         </Typography>
         <Typography variant="h5" sx={{ margin: "24px" }}>
           Vineri, 25 August 2023 - Cluj Napoca
         </Typography>
-        <Typography variant="h1" sx={{transform: {xs: 'scale(0.75)', md: 'scale(1)'}}}>{countdown}</Typography>
+        <Typography variant="h1" sx={{transform: {xs: 'scale(0.6)', md: 'scale(1)'}}}>{countdown}</Typography>
       </Box>
     </Box>
   );
