@@ -65,13 +65,16 @@ const Unde = () => {
           justifyContent: "center",
           gap: "24px",
           width: "100%",
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: 'column', sm: "column", md: "row" },
           marginTop: "48px",
+          alignItems: "center",
+          alignContent: "center",
         }}
       >
         <Box
           sx={{
             height: "420px",
+            minWidth: '350px',
             maxWidth: "420px",
             display: "flex",
             flexDirection: "column",
@@ -134,6 +137,7 @@ const Unde = () => {
         <Box
           sx={{
             height: "420px",
+            minWidth: '350px',
             maxWidth: "420px",
             display: "flex",
             flexDirection: "column",
@@ -194,8 +198,8 @@ const Unde = () => {
         </Box>
       </Box>
       <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-        <DialogTitle sx={{textAlign: 'center'}}>{place.name}</DialogTitle>
-        <DialogContent sx={{textAlign: 'center'}}>
+        <DialogTitle sx={{ textAlign: "center" }}>{place.name}</DialogTitle>
+        <DialogContent sx={{ textAlign: "center" }}>
           {showImage ? (
             <Box
               component="img"
@@ -219,10 +223,16 @@ const Unde = () => {
             />
           )}
           <Button
-            sx={{ border: "2px solid #eee0d5", padding: "8px 30px", marginTop: '8px' }}
+            sx={{
+              border: "2px solid #eee0d5",
+              padding: "8px 30px",
+              marginTop: "8px",
+            }}
             onClick={() => setShowImage(!showImage)}
           >
-            <Typography sx={{ color: "black" }}>{`Arată ${showImage ? "harta" : 'imaginea'}` }</Typography>
+            <Typography sx={{ color: "black" }}>{`Arată ${
+              showImage ? "harta" : "imaginea"
+            }`}</Typography>
           </Button>
         </DialogContent>
       </Dialog>

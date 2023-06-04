@@ -28,8 +28,7 @@ const PageHeader = ({ isHidden }: { isHidden: boolean }) => {
   const handleButtonClick = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      console.log('ele', element, section)
+      setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 0);
     }
   };
   const [mobileOpen, setMobileOpen] = React.useState(false);
