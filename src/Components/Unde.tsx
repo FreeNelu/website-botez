@@ -64,8 +64,8 @@ const Unde = () => {
       >
         Evenimente
       </Typography>
-      <Typography variant="subtitle1" gutterBottom sx={{ color: "#757575" }}>
-        Ceremonia religioasă - Petrecerea
+      <Typography variant="h6" gutterBottom sx={{ color: "#757575" }}>
+        Ceremonia religioasă și Petrecerea
       </Typography>
       <Box
         sx={{
@@ -133,7 +133,7 @@ const Unde = () => {
           <Typography variant="h6">Adresa</Typography>
           <Typography variant="subtitle1">Biserica Piaristă</Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Cluj Napoca
+            Cluj-Napoca
           </Typography>
           <Button
             sx={{ border: "2px solid #b0f2d3", padding: "8px 30px" }}
@@ -195,7 +195,7 @@ const Unde = () => {
           <Typography variant="h6">Adresa</Typography>
           <Typography variant="subtitle1">Restaurant 25'th Downtown</Typography>
           <Typography variant="subtitle1" gutterBottom>
-            Cluj Napoca
+            Cluj-Napoca
           </Typography>
           <Button
             sx={{ border: "2px solid #eee0d5", padding: "8px 30px" }}

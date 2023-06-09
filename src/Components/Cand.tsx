@@ -79,7 +79,7 @@ const Cand = () => {
           Când?
         </Typography>
         <Typography variant="h5" sx={{ margin: "24px 16px 0px 16px" }}>
-          Vineri, 25 August 2023 - Cluj Napoca
+          Vineri, 25 August 2023 - Cluj-Napoca
         </Typography>
         <Typography variant="h1" sx={{transform: {xs: 'scale(0.6)', md: 'scale(1)'}, lineHeight: 1.3}}>{countdown}</Typography>
       </Box>

@@ -19,7 +19,7 @@ const Ce = () => {
       <Typography
         variant="h2"
         component="div"
-        sx={{ fontFamily: "'Kristi', cursive" }}
+        sx={{ fontFamily: "'Kristi', cursive", color: 'rgb(143, 113, 83)' }}
       >
         Te invit la botezul meu!
       </Typography>

@@ -336,7 +336,7 @@ const Acasa = () => {
             animation: `${fadeInAndSlideUp} 1s ease-in-out`,
           }}
         >
-          Biserica Piaristă, Cluj Napoca | Restaurant 25'th Downtown, Cluj
+          Biserica Piaristă, Cluj-Napoca | Restaurant 25'th Downtown, Cluj
           Napoca
         </Typography>
       </Box>
