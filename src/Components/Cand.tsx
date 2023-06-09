@@ -20,7 +20,7 @@ const Cand = () => {
       const minutes = duration.minutes();
       const seconds = duration.seconds();
 
-      const countdownString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      const countdownString = `${days} zile ${hours}:${minutes}:${seconds}`;
 
       setCountdown(countdownString);
 
