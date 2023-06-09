@@ -40,9 +40,8 @@ const Ce = () => {
         src={newBorn}
         sx={{
           margin: "32px",
-          width: "200x",
-          height: "200px",
-          borderRadius: "20px",
+          width: "300px",
+          borderRadius: '10px'
         }}
       />
       <Box
