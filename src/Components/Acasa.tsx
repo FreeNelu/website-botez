@@ -146,7 +146,7 @@ const Acasa = () => {
         >
           <Box
             component="img"
-            alt="Pink plushies"
+            alt="Family photo"
             src={bg1}
             sx={{
               width: "auto",
@@ -165,24 +165,25 @@ const Acasa = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
           padding: "32px",
           borderRadius: "8px",
           alignContent: "center",
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
+          width: {xs:'100%', sm:'auto'}
         }}
       >
         <Typography
           variant="h1"
           sx={{
-            marginBottom: "12px",
-            transform: { xs: "scale(0.8)", md: "scale(1)" },
-            fontFamily: "'Lato', sans-serif",
+            marginTop: {xs: '128px', md: '64px'},
+            marginBottom: '86px',
+            transform: { xs: "scale(1.5)", md: "scale(2)" },fontFamily: "'Kristi', cursive",
+            color: 'white',
           }}
         >
-          Ivana <br /> Holici
+          Ivana
         </Typography>
         <Box
           sx={{
@@ -193,7 +194,7 @@ const Acasa = () => {
             alignContent: "center",
             alignItems: "center",
             position: "relative",
-            marginBottom: "12px",
+            marginBottom: "24px",
             flexDirection: { xs: "column", sm: "row" },
             gap: { xs: "6px", sm: "0px" },
           }}
@@ -255,7 +256,7 @@ const Acasa = () => {
             <Typography>25 August 2023</Typography>
           </Box>
         </Box>
-        <Typography variant="body1">
+        <Typography variant="body1" fontWeight={700} sx={{color: 'white'}}>
           Biserica Piaristă, Cluj Napoca | Restaurant 25'th Downtown, Cluj
           Napoca
         </Typography>
