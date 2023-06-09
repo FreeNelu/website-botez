@@ -11,7 +11,11 @@ import ChurchIcon from "@mui/icons-material/Church";
 import WineBarIcon from "@mui/icons-material/WineBar";
 import biserica from "../Assets/biserica.jpg";
 import restaurant from "../Assets/restaurant.jpg";
-import { fadeInAndSlideLeft, fadeInAndSlideRight, fadeInAndSlideUp } from "./Animation";
+import {
+  fadeInAndSlideLeft,
+  fadeInAndSlideRight,
+  fadeInAndSlideUp,
+} from "./Animation";
 
 const CHURCH = {
   name: "Biserica Piariștilor",
@@ -121,10 +125,23 @@ const Unde = () => {
         >
           Evenimente
         </Typography>
-        <Typography variant="h6" gutterBottom sx={{ color: "#757575" }}>
-          Ceremonia religioasă și Petrecerea
-        </Typography>
       </Box>
+      <Typography
+        variant="h6"
+        gutterBottom
+        sx={{
+          color: "#757575",
+          opacity: isVisible.second ? 1 : 0,
+          transform: isVisible.second ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.second
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
+        }}
+        ref={secondTypographyRef}
+        id="second"
+      >
+        Ceremonia religioasă și Petrecerea
+      </Typography>
       <Box
         sx={{
           display: "flex",
@@ -138,8 +155,6 @@ const Unde = () => {
         }}
       >
         <Box
-          ref={secondTypographyRef}
-          id="second"
           sx={{
             height: "420px",
             minWidth: "350px",
