@@ -154,6 +154,7 @@ const Acasa = () => {
               maxHeight: "100%",
               objectFit: "cover",
               filter: "brightness(0.8)",
+              transform: 'translateX(-32px)'
             }}
           />
         </Box>
