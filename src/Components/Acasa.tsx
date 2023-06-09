@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -15,6 +15,7 @@ import bg1 from "../Assets/bg1.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Heart.css";
+import { keyframes } from "@emotion/react";
 
 const navItems = {
   acasa: "Acasă",
@@ -25,6 +26,60 @@ const navItems = {
 };
 
 const Acasa = () => {
+  const fadeInAndSlideUp = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+  const fadeInAndSlideDown = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+  const fadeInAndSlideLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+  const fadeInAndSlideRight = keyframes`
+0% {
+  opacity: 0;
+  transform: translateX(100%);
+}
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+`;
+  const fadeIn = keyframes`
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+`;
+
+  const [hasBeenSeen, setHasBeenSeen] = useState(false);
+  useEffect(() => {
+    setHasBeenSeen(true);
+  }, []);
+
   const handleButtonClick = (section: string) => {
     const element = document.getElementById(section);
     if (element) {
@@ -154,7 +209,7 @@ const Acasa = () => {
               maxHeight: "100%",
               objectFit: "cover",
               filter: "brightness(0.8)",
-              transform: 'translateX(-32px)'
+              transform: "translateX(-32px)",
             }}
           />
         </Box>
@@ -163,7 +218,7 @@ const Acasa = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "50%",
+          top: "52.5%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           padding: "32px",
@@ -172,16 +227,20 @@ const Acasa = () => {
           alignItems: "center",
           display: "flex",
           flexDirection: "column",
-          width: {xs:'100%', sm:'auto'}
+          width: { xs: "100%", sm: "auto" },
         }}
       >
         <Typography
           variant="h1"
           sx={{
-            marginTop: {xs: '128px', md: '64px'},
-            marginBottom: '86px',
-            transform: { xs: "scale(1.5)", md: "scale(2)" },fontFamily: "'Kristi', cursive",
-            color: 'white',
+            marginTop: { xs: "128px", md: "64px" },
+            marginBottom: "54px",
+            fontSize: '96px',
+            fontFamily: "'Kristi', cursive",
+            color: "white",
+            opacity: hasBeenSeen ? 1 : 0,
+            transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
+            animation: `${fadeInAndSlideDown} 1s ease-in-out`,
           }}
         >
           Ivana
@@ -212,6 +271,9 @@ const Acasa = () => {
               borderBottomLeftRadius: "100px",
               borderTopRightRadius: { xs: "100px", sm: "0%" },
               borderBottomRightRadius: { xs: "100px", sm: "0%" },
+              opacity: hasBeenSeen ? 1 : 0,
+              transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
+              animation: `${fadeInAndSlideLeft} 1s ease-in-out`,
             }}
           >
             <Typography>Botez</Typography>
@@ -230,6 +292,10 @@ const Acasa = () => {
                 xs: "linear-gradient(to bottom, #eee0d5 50%, #b0f2d3 50%)",
                 sm: "transparent",
               },
+              zIndex: 99,
+              opacity: hasBeenSeen ? 1 : 0,
+              transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
+              animation: `${fadeIn} 1s ease-in-out`,
             }}
           >
             <FavoriteIcon
@@ -252,12 +318,24 @@ const Acasa = () => {
               borderBottomRightRadius: "100px",
               borderTopLeftRadius: { xs: "100px", sm: "0%" },
               borderBottomLeftRadius: { xs: "100px", sm: "0%" },
+              opacity: hasBeenSeen ? 1 : 0,
+              transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
+              animation: `${fadeInAndSlideRight} 1s ease-in-out`,
             }}
           >
             <Typography>25 August 2023</Typography>
           </Box>
         </Box>
-        <Typography variant="body1" fontWeight={700} sx={{color: 'white'}}>
+        <Typography
+          variant="body1"
+          fontWeight={700}
+          sx={{
+            color: "white",
+            opacity: hasBeenSeen ? 1 : 0,
+            transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
+            animation: `${fadeInAndSlideUp} 1s ease-in-out`,
+          }}
+        >
           Biserica Piaristă, Cluj Napoca | Restaurant 25'th Downtown, Cluj
           Napoca
         </Typography>

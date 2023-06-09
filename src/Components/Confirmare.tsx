@@ -24,6 +24,7 @@ const Confirmare = () => {
         sx={{
           fontFamily: "'Kristi', cursive",
           transform: { xs: "", md: "scale(1.25)" },
+          color: 'rgb(143, 113, 83)'
         }}
       >
         Confirmare
