@@ -28,7 +28,7 @@ const Confirmare = () => {
       >
         Confirmare
       </Typography>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom sx={{padding: '0px 16px'}}>
         Poți confirma participarea folosind formularul de mai jos.
       </Typography>
       <Box
