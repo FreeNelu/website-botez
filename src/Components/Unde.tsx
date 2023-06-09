@@ -53,7 +53,14 @@ const Unde = () => {
         margin: "72px 16px",
       }}
     >
-      <Typography variant="h2" gutterBottom>
+      <Typography
+        variant="h1"
+        gutterBottom
+        sx={{
+          fontFamily: "'Kristi', cursive",
+          transform: { xs: "", md: "scale(1.25)" },
+        }}
+      >
         Evenimente
       </Typography>
       <Typography variant="subtitle1" gutterBottom sx={{ color: "#757575" }}>
@@ -65,7 +72,7 @@ const Unde = () => {
           justifyContent: "center",
           gap: "24px",
           width: "100%",
-          flexDirection: { xs: 'column', sm: "column", md: "row" },
+          flexDirection: { xs: "column", sm: "column", md: "row" },
           marginTop: "48px",
           alignItems: "center",
           alignContent: "center",
@@ -74,7 +81,7 @@ const Unde = () => {
         <Box
           sx={{
             height: "420px",
-            minWidth: '350px',
+            minWidth: "350px",
             maxWidth: "420px",
             display: "flex",
             flexDirection: "column",
@@ -137,7 +144,7 @@ const Unde = () => {
         <Box
           sx={{
             height: "420px",
-            minWidth: '350px',
+            minWidth: "350px",
             maxWidth: "420px",
             display: "flex",
             flexDirection: "column",

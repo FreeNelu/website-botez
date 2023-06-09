@@ -18,7 +18,14 @@ const Confirmare = () => {
         textAlign: "center",
       }}
     >
-      <Typography variant="h3" gutterBottom>
+      <Typography
+        variant="h1"
+        gutterBottom
+        sx={{
+          fontFamily: "'Kristi', cursive",
+          transform: { xs: "", md: "scale(1.25)" },
+        }}
+      >
         Confirmare
       </Typography>
       <Typography variant="h6" gutterBottom>

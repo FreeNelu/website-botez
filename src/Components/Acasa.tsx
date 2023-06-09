@@ -136,17 +136,29 @@ const Acasa = () => {
       </Box>
       <Box sx={{ minWidth: "100%", height: "100vh", overflow: "hidden" }}>
         <Box
-          component="img"
-          alt="Pink plushies"
-          src={bg1}
           sx={{
-            minWidth: "100%",
-            height: "100%",
-            objectFit: "cover",
-            filter: "brightness(0.8)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            overflow: "hidden",
           }}
-        />
+        >
+          <Box
+            component="img"
+            alt="Pink plushies"
+            src={bg1}
+            sx={{
+              width: "auto",
+              height: "100%",
+              maxHeight: "100%",
+              objectFit: "cover",
+              filter: "brightness(0.8)",
+            }}
+          />
+        </Box>
       </Box>
+
       <Box
         sx={{
           position: "absolute",
@@ -244,7 +256,8 @@ const Acasa = () => {
           </Box>
         </Box>
         <Typography variant="body1">
-          Biserica Piaristă, Cluj Napoca | Restaurant 25'th Downtown, Cluj Napoca
+          Biserica Piaristă, Cluj Napoca | Restaurant 25'th Downtown, Cluj
+          Napoca
         </Typography>
       </Box>
     </Box>

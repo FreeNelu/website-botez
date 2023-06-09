@@ -30,7 +30,7 @@ const Ce = () => {
         Dacă ai ajuns aici înseamnă că țin la tine și m-aș bucura enorm dacă ai
         fi alături de mine într-o zi atât de specială!
       </Typography>
-      <Typography variant="h5">Numele meu este Ivana Holici,</Typography>
+      <Typography variant="h5">Numele meu este Ivana,</Typography>
       <Typography variant="subtitle1" sx={{ color: "#757575" }}>
         iar aceasta este prima mea petrecere!
       </Typography>
@@ -40,9 +40,9 @@ const Ce = () => {
         src={newBorn}
         sx={{
           margin: "32px",
-          width: "176px",
-          height: "176px",
-          borderRadius: "100%",
+          width: "200x",
+          height: "200px",
+          borderRadius: "20px",
         }}
       />
       <Box
