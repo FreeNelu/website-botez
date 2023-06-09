@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Button,
@@ -11,6 +11,7 @@ import ChurchIcon from "@mui/icons-material/Church";
 import WineBarIcon from "@mui/icons-material/WineBar";
 import biserica from "../Assets/biserica.jpg";
 import restaurant from "../Assets/restaurant.jpg";
+import { fadeInAndSlideLeft, fadeInAndSlideRight, fadeInAndSlideUp } from "./Animation";
 
 const CHURCH = {
   name: "Biserica Piariștilor",
@@ -42,6 +43,51 @@ const Unde = () => {
     setOpen(false);
   };
 
+  const [isVisible, setIsVisible] = useState({
+    first: false,
+    second: false,
+    third: false,
+  });
+
+  const firstTypographyRef = useRef(null);
+  const secondTypographyRef = useRef(null);
+  const thirdTypographyRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prevState) => ({
+            ...prevState,
+            [entry.target.id]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    if (firstTypographyRef.current) {
+      observer.observe(firstTypographyRef.current);
+    }
+
+    if (secondTypographyRef.current) {
+      observer.observe(secondTypographyRef.current);
+    }
+
+    if (thirdTypographyRef.current) {
+      observer.observe(thirdTypographyRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <Box
       id="unde"
@@ -53,20 +99,32 @@ const Unde = () => {
         margin: "72px 16px",
       }}
     >
-      <Typography
-        variant="h1"
-        gutterBottom
+      <Box
+        ref={firstTypographyRef}
+        id="first"
         sx={{
-          fontFamily: "'Kristi', cursive",
-          transform: { xs: "", md: "scale(1.25)" },
-          color: 'rgb(143, 113, 83)'
+          opacity: isVisible.first ? 1 : 0,
+          transform: isVisible.first ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.first
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
         }}
       >
-        Evenimente
-      </Typography>
-      <Typography variant="h6" gutterBottom sx={{ color: "#757575" }}>
-        Ceremonia religioasă și Petrecerea
-      </Typography>
+        <Typography
+          variant="h1"
+          gutterBottom
+          sx={{
+            fontFamily: "'Kristi', cursive",
+            transform: { xs: "", md: "scale(1.25)" },
+            color: "rgb(143, 113, 83)",
+          }}
+        >
+          Evenimente
+        </Typography>
+        <Typography variant="h6" gutterBottom sx={{ color: "#757575" }}>
+          Ceremonia religioasă și Petrecerea
+        </Typography>
+      </Box>
       <Box
         sx={{
           display: "flex",
@@ -80,6 +138,8 @@ const Unde = () => {
         }}
       >
         <Box
+          ref={secondTypographyRef}
+          id="second"
           sx={{
             height: "420px",
             minWidth: "350px",
@@ -93,6 +153,11 @@ const Unde = () => {
             borderRadius: "6px",
             border: "20px solid #b0f2d3",
             flexGrow: 1,
+            opacity: isVisible.second ? 1 : 0,
+            transform: isVisible.second ? "translateY(0)" : "translateY(100%)",
+            animation: isVisible.second
+              ? `${fadeInAndSlideLeft} 1s ease-in-out`
+              : "none",
           }}
         >
           <Box
@@ -143,6 +208,8 @@ const Unde = () => {
           </Button>
         </Box>
         <Box
+          ref={thirdTypographyRef}
+          id="third"
           sx={{
             height: "420px",
             minWidth: "350px",
@@ -156,6 +223,11 @@ const Unde = () => {
             borderRadius: "6px",
             border: "20px solid #eee0d5",
             flexGrow: 1,
+            opacity: isVisible.third ? 1 : 0,
+            transform: isVisible.third ? "translateY(0)" : "translateY(100%)",
+            animation: isVisible.third
+              ? `${fadeInAndSlideRight} 1s ease-in-out`
+              : "none",
           }}
         >
           <Box

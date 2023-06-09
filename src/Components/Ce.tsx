@@ -1,10 +1,68 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import newBorn from "../Assets/newBorn.jpg";
 import "./Heart.css";
+import { fadeInAndSlideLeft, fadeInAndSlideUp } from "./Animation";
 
 const Ce = () => {
+  const [isVisible, setIsVisible] = useState({
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false
+  });
+
+  const firstTypographyRef = useRef(null);
+  const secondTypographyRef = useRef(null);
+  const thirdTypographyRef = useRef(null);
+  const fourthTypographyRef = useRef(null);
+  const fifthTypographyRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible((prevState) => ({
+            ...prevState,
+            [entry.target.id]: true,
+          }));
+        }
+      });
+    }, observerOptions);
+
+    if (firstTypographyRef.current) {
+      observer.observe(firstTypographyRef.current);
+    }
+
+    if (secondTypographyRef.current) {
+      observer.observe(secondTypographyRef.current);
+    }
+
+    if (thirdTypographyRef.current) {
+      observer.observe(thirdTypographyRef.current);
+    }
+
+    if (fourthTypographyRef.current) {
+      observer.observe(fourthTypographyRef.current);
+    }
+
+    if (fifthTypographyRef.current) {
+      observer.observe(fifthTypographyRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <Box
       id="ce"
@@ -16,24 +74,51 @@ const Ce = () => {
         margin: "72px 16px",
       }}
     >
-      <Typography
-        variant="h2"
-        component="div"
-        sx={{ fontFamily: "'Kristi', cursive", color: 'rgb(143, 113, 83)' }}
+      <Box
+        ref={firstTypographyRef}
+        id="first"
+        sx={{
+          opacity: isVisible.first ? 1 : 0,
+          transform: isVisible.first ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.first
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
+        }}
       >
-        Te invit la botezul meu!
-      </Typography>
-      <Typography
-        variant="subtitle1"
-        sx={{ marginBottom: "32px", color: "#757575" }}
+        <Typography
+          variant="h2"
+          component="div"
+          sx={{
+            fontFamily: "'Kristi', cursive",
+            color: "rgb(143, 113, 83)",
+          }}
+        >
+          Te invit la botezul meu!
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          sx={{ marginBottom: "32px", color: "#757575" }}
+        >
+          Dacă ai ajuns aici înseamnă că țin la tine și m-aș bucura enorm dacă
+          ai fi alături de mine într-o zi atât de specială!
+        </Typography>
+      </Box>
+      <Box
+        ref={secondTypographyRef}
+        id="second"
+        sx={{
+          opacity: isVisible.second ? 1 : 0,
+          transform: isVisible.second ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.second
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
+        }}
       >
-        Dacă ai ajuns aici înseamnă că țin la tine și m-aș bucura enorm dacă ai
-        fi alături de mine într-o zi atât de specială!
-      </Typography>
-      <Typography variant="h5">Numele meu este Ivana,</Typography>
-      <Typography variant="subtitle1" sx={{ color: "#757575" }}>
-        iar aceasta este prima mea petrecere!
-      </Typography>
+        <Typography variant="h5">Numele meu este Ivana,</Typography>
+        <Typography variant="subtitle1" sx={{ color: "#757575" }}>
+          iar aceasta este prima mea petrecere!
+        </Typography>
+      </Box>
       <Box
         component="img"
         alt="Bebeluș"
@@ -41,8 +126,15 @@ const Ce = () => {
         sx={{
           margin: "32px",
           width: "300px",
-          borderRadius: '10px'
+          borderRadius: "10px",
+          opacity: isVisible.third ? 1 : 0,
+          transform: isVisible.third ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.third
+            ? `${fadeInAndSlideLeft} 1s ease-in-out`
+            : "none",
         }}
+        ref={thirdTypographyRef}
+        id="third"
       />
       <Box
         sx={{
@@ -50,7 +142,14 @@ const Ce = () => {
           justifyContent: "space-evenly",
           alignItems: "center",
           gap: "12px",
+          opacity: isVisible.fourth ? 1 : 0,
+          transform: isVisible.fourth ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.fourth
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
         }}
+        ref={fourthTypographyRef}
+        id="fourth"
       >
         <Box
           sx={{
@@ -114,7 +213,14 @@ const Ce = () => {
           flexDirection: "column",
           justifyContent: "space-between",
           marginTop: "24px",
+          opacity: isVisible.fifth ? 1 : 0,
+          transform: isVisible.fifth ? "translateY(0)" : "translateY(100%)",
+          animation: isVisible.fifth
+            ? `${fadeInAndSlideUp} 1s ease-in-out`
+            : "none",
         }}
+        ref={fifthTypographyRef}
+        id="fifth"
       >
         <Typography variant="subtitle1" sx={{ color: "#757575" }}>
           Nașii

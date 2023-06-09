@@ -15,7 +15,7 @@ import bg1 from "../Assets/bg1.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./Heart.css";
-import { keyframes } from "@emotion/react";
+import { fadeIn, fadeInAndSlideDown, fadeInAndSlideLeft, fadeInAndSlideRight, fadeInAndSlideUp } from "./Animation";
 
 const navItems = {
   acasa: "Acasă",
@@ -26,54 +26,7 @@ const navItems = {
 };
 
 const Acasa = () => {
-  const fadeInAndSlideUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-  const fadeInAndSlideDown = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-  const fadeInAndSlideLeft = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
-  const fadeInAndSlideRight = keyframes`
-0% {
-  opacity: 0;
-  transform: translateX(100%);
-}
-100% {
-  opacity: 1;
-  transform: translateX(0);
-}
-`;
-  const fadeIn = keyframes`
-0% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
-`;
+  
 
   const [hasBeenSeen, setHasBeenSeen] = useState(false);
   useEffect(() => {
