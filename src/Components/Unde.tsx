@@ -212,6 +212,7 @@ const Unde = () => {
           </Typography>
           <Typography variant="h6">Adresa</Typography>
           <Typography variant="subtitle1">Biserica Piaristă</Typography>
+          <Typography variant="subtitle1">Str. Universității 5, Cluj-Napoca</Typography>
           <Typography variant="subtitle1" gutterBottom>
             Cluj-Napoca
           </Typography>
@@ -281,6 +282,7 @@ const Unde = () => {
           </Typography>
           <Typography variant="h6">Adresa</Typography>
           <Typography variant="subtitle1">Restaurant 25'th Downtown</Typography>
+          <Typography variant="subtitle1">Piața Unirii 4-5, Cluj-Napoca</Typography>
           <Typography variant="subtitle1" gutterBottom>
             Cluj-Napoca
           </Typography>
