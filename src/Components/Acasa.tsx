@@ -188,8 +188,8 @@ const Acasa = () => {
           sx={{
             marginTop: { xs: "128px", md: "64px" },
             marginBottom: "54px",
-            fontSize: '96px',
-            fontFamily: "'Kristi', cursive",
+            fontSize: '54px',
+            fontFamily: "'Playfair Display', serif",
             color: "white",
             opacity: hasBeenSeen ? 1 : 0,
             transform: hasBeenSeen ? "translateY(0)" : "translateY(100%)",
